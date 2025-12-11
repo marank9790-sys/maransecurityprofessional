@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maran - Security Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d74da;
+            --accent: #e63946;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d2340 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), 
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .passport-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-highlights {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        /* Profile Photo Section */
+        .profile-photo-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            margin: 0 auto 1rem;
+            background-color: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-upload-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .photo-upload-btn:hover {
+            background: #1a5bb8;
+            transform: translateY(-2px);
+        }
+
+        .photo-input {
+            display: none;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-icon {
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Certifications */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .cert-card .issuer {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            border-left: 4px solid var(--secondary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-right: 4px solid var(--secondary);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            padding-left: 1.2rem;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .skill-category ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category ul li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        /* Contact & Resume */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .message-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .message-box h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(45, 116, 218, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            background: var(--secondary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .resume-btn:hover {
+            background: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .send-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba(45, 116, 218, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .send-btn:hover {
+            background: #1a5bb8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 116, 218, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .availability {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem 0;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">MARAN<span>SECURITY</span></div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>MARAN KALIMUTHU</h1>
+            <div class="title">Aviation & Corporate Security Professional</div>
+            <p>Certified security specialist with expertise in aviation security, access control, surveillance, and threat detection. Experienced in high-security environments with a strong commitment to safety protocols and regulatory compliance.</p>
+            <div class="passport-badge">
+                <i class="fas fa-passport"></i> Valid Passport Holder | Willing to Relocate Internationally
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated and certified security professional with extensive experience in high-security aviation environments. My expertise spans passenger and cargo screening, access control management, surveillance operations, and emergency response coordination.</p>
+                    <p>With BCAS-approved certifications and hands-on experience at Chennai International Airport, I have developed strong competencies in threat detection, security protocol implementation, and regulatory compliance.</p>
+                    <p>I am seeking opportunities to leverage my security expertise in international roles, particularly in aviation security, corporate security, or facility protection. I am ready to relocate and contribute to organizations that prioritize safety and security excellence.</p>
+                </div>
+                <div class="about-highlights">
+                    <!-- Profile Photo Section -->
+                    <div class="profile-photo-section">
+                        <div class="profile-photo" id="profilePhoto">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="file" id="photoInput" class="photo-input" accept="image/*">
+                        <button class="photo-upload-btn" onclick="document.getElementById('photoInput').click()">
+                            <i class="fas fa-camera"></i> Upload Profile Photo
+                        </button>
+                        <p style="font-size: 0.8rem; color: var(--gray); margin-top: 5px;">Max size: 2MB | Format: JPG, PNG</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div>
+                            <h3>Aviation Security</h3>
+                            <p>BCAS-certified screener with airport security experience</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Regulatory Compliance</h3>
+                            <p>Expert in BCAS, DGR, and safety management protocols</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>International Ready</h3>
+                            <p>Valid passport and willing to relocate globally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-container">
+                <div class="cert-card">
+                    <h3>AVSEC Screener Certificate</h3>
+                    <div class="issuer">BCAS (Bureau of Civil Aviation Security)</div>
+                    <div class="date">Issued: 2024 | Valid: 2026</div>
+                    <p>Certified to screen passengers, baggage, and cargo using X-ray and other screening equipment.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>AVSEC Basic Certification</h3>
+                    <div class="issuer">BCAS (Bureau of Civil Aviation Security)</div>
+                    <div class="date">Issued: 2024 | Valid: 2026</div>
+                    <p>Foundation certification in aviation security covering security protocols and procedures.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Dangerous Goods Regulations (DGR)</h3>
+                    <div class="issuer">IATA Training Program</div>
+                    <div class="date">Issued: 2023</div>
+                    <p>Awareness training for handling and identifying dangerous goods in aviation.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Safety Management System (SMS)</h3>
+                    <div class="issuer">ICAO Standards Training</div>
+                    <div class="date">Issued: 2023</div>
+                    <p>Training in safety management systems for aviation security operations.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Visa & Travel Document Verification</h3>
+                    <div class="issuer">Immigration & Border Security Training</div>
+                    <div class="date">Issued: 2023</div>
+                    <p>Specialized training in identifying fraudulent travel documents and visas.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>X-Ray Image Interpretation</h3>
+                    <div class="issuer">Aviation Security Training Institute</div>
+                    <div class="date">Issued: 2024</div>
+                    <p>Advanced training in interpreting X-ray images for threat detection in baggage screening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Security Executive</h3>
+                        <div class="company">IndiGo Airlines | Chennai International Airport</div>
+                        <div class="date">October 2024 - Present</div>
+                        <ul>
+                            <li>Conducted passenger, baggage, and cargo screening in compliance with BCAS security standards</li>
+                            <li>Managed access control and surveillance operations in restricted airport areas</li>
+                            <li>Coordinated with CISF and airline officials during security incidents and emergencies</li>
+                            <li>Operated X-ray screening equipment for threat detection in passenger baggage</li>
+                            <li>Documented and reported security incidents as per regulatory requirements</li>
+                            <li>Maintained strict security discipline while delivering exceptional customer service</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Customer Service Executive</h3>
+                        <div class="company">Vs Global Services Pvt. Ltd. (Bharti Airtel Process)</div>
+                        <div class="date">July 2023 - October 2024</div>
+                        <ul>
+                            <li>Handled customer queries and service requests via multiple communication channels</li>
+                            <li>Ensured customer satisfaction through prompt resolution and effective communication</li>
+                            <li>Maintained confidentiality and secure handling of sensitive customer information</li>
+                            <li>Processed service activations, updates, and complaint escalations with accuracy</li>
+                            <li>Trained in data confidentiality and secure information handling protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Security Operations</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Access Control Management</li>
+                        <li><i class="fas fa-check-circle"></i> CCTV & Surveillance Monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Threat Detection & Risk Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Emergency Response Handling</li>
+                        <li><i class="fas fa-check-circle"></i> Patrolling & Perimeter Security</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Aviation Security</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Passenger & Baggage Screening</li>
+                        <li><i class="fas fa-check-circle"></i> X-Ray Image Interpretation</li>
+                        <li><i class="fas fa-check-circle"></i> Cargo Security Protocols</li>
+                        <li><i class="fas fa-check-circle"></i> BCAS Regulation Compliance</li>
+                        <li><i class="fas fa-check-circle"></i> Airport Access Control</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Document & Verification</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Travel Document Verification</li>
+                        <li><i class="fas fa-check-circle"></i> Visa Authentication</li>
+                        <li><i class="fas fa-check-circle"></i> Fraudulent Document Detection</li>
+                        <li><i class="fas fa-check-circle"></i> Identity Verification Procedures</li>
+                        <li><i class="fas fa-check-circle"></i> Passport Security Features</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Incident Reporting & Documentation</li>
+                        <li><i class="fas fa-check-circle"></i> Conflict Resolution</li>
+                        <li><i class="fas fa-check-circle"></i> Customer Service Excellence</li>
+                        <li><i class="fas fa-check-circle"></i> Team Coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Regulatory Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Resume Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Resume</h2>
+            <div class="contact-container">
+                <div class="contact-box">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Available for International Opportunities</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">I hold a valid passport and am willing to relocate for suitable security positions in aviation, corporate, or facility security roles worldwide.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>+91 9790776525</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>marank1105@gmail.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Chennai, India | Ready to Relocate</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://drive.google.com/file/d/1jix38K6oXQYmVMs8NK5vSMp-BY3jLXQu/view?usp=sharing" target="_blank" class="resume-btn">
+                        <i class="fas fa-download"></i> View & Download Resume (PDF)
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">Click the button above to access my detailed resume on Google Drive</p>
+                </div>
+                
+                <!-- Send Message Form -->
+                <div class="message-box">
+                    <h3>Send Me a Message</h3>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="font-size: 1.8rem; margin-bottom: 1rem;">MARAN<span>SECURITY</span></div>
+                <p style="max-width: 600px; margin-bottom: 1.5rem; opacity: 0.9;">Certified Aviation & Corporate Security Professional | BCAS Certified | International Deployment Ready</p>
+                <div class="availability">
+                    <i class="fas fa-plane-departure"></i> Immediately Available for International Roles
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Maran Security Portfolio. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Profile Photo Upload
+        const photoInput = document.getElementById('photoInput');
+        const profilePhoto = document.getElementById('profilePhoto');
+
+        photoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // Check file size (max 2MB)
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('File size is too large. Please upload an image smaller than 2MB.');
+                    return;
+                }
+
+                // Check file type
+                const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+                if (!validTypes.includes(file.type)) {
+                    alert('Please upload a JPG or PNG image.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    // Create an image element
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.alt = 'Profile Photo';
+                    
+                    // Clear previous content and add the image
+                    profilePhoto.innerHTML = '';
+                    profilePhoto.appendChild(img);
+                    
+                    // Save to localStorage
+                    localStorage.setItem('profilePhoto', event.target.result);
+                    
+                    alert('Profile photo uploaded successfully!');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Load saved profile photo from localStorage
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedPhoto = localStorage.getItem('profilePhoto');
+            if (savedPhoto) {
+                const img = document.createElement('img');
+                img.src = savedPhoto;
+                img.alt = 'Profile Photo';
+                profilePhoto.innerHTML = '';
+                profilePhoto.appendChild(img);
+            }
+        });
+
+        // Send Message Form
+        const messageForm = document.getElementById('messageForm');
+        
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send this data to a server
+            // For this example, we'll just show a success message
+            alert(`Thank you ${name}! Your message has been sent.\n\nI will get back to you at ${email} soon.`);
+            
+            // Reset form
+            messageForm.reset();
+            
+            // Log the message (in a real app, this would go to your server)
+            console.log('Message received:', {
+                name,
+                email,
+                subject,
+                message,
+                timestamp: new Date().toISOString()
+            });
+        });
+    </script>
+</body>
+</html>
