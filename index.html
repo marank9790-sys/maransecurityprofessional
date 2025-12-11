@@ -203,7 +203,6 @@
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
         }
 
         .profile-photo {
@@ -226,30 +225,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .photo-upload-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            margin-top: 10px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .photo-upload-btn:hover {
-            background: #1a5bb8;
-            transform: translateY(-2px);
-        }
-
-        .photo-input {
-            display: none;
         }
 
         .highlight-item {
@@ -678,29 +653,28 @@
                 </div>
                 <div class="about-highlights">
                     <!-- Profile Photo Section -->
-                   <!-- Profile Photo Section -->
-<div class="profile-photo-section">
-    <div class="profile-photo">
-        <!-- Your Photo - Update the filename to match your uploaded photo -->
-        <img src="photo.jpg" 
-             alt="Maran Kalimuthu - Security Professional"
-             style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div style="margin-top: 1.5rem;">
-        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">MARAN KALIMUTHU</h3>
-        <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.3rem;">
-            <i class="fas fa-shield-alt"></i> International Security Professional
-        </p>
-        <p style="color: var(--gray); font-size: 0.9rem;">
-            <i class="fas fa-certificate"></i> BCAS & STCW Certified
-        </p>
-        <div style="margin-top: 1rem; padding: 0.5rem; background: #f0f4f8; border-radius: 5px;">
-            <p style="font-size: 0.85rem; color: var(--primary); margin: 0;">
-                <i class="fas fa-passport"></i> Valid Passport Holder | Ready for International Deployment
-            </p>
-        </div>
-    </div>
-</div>
+                    <div class="profile-photo-section">
+                        <div class="profile-photo">
+                            <!-- YOUR PHOTO HERE -->
+                            <!-- Upload your photo to GitHub and replace this URL -->
+                            <img src="https://via.placeholder.com/500x500/1a365d/ffffff?text=MARAN+PHOTO" 
+                                 alt="Maran Kalimuthu - Security Professional">
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem; text-transform: uppercase;">MARAN KALIMUTHU</h3>
+                            <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">
+                                <i class="fas fa-shield-alt"></i> International Security Professional
+                            </p>
+                            <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem;">
+                                <i class="fas fa-certificate"></i> BCAS & STCW Certified
+                            </p>
+                            <div style="background: var(--primary); color: white; padding: 0.8rem; border-radius: 8px; margin-top: 1rem;">
+                                <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">
+                                    <i class="fas fa-passport"></i> Valid Passport Holder | Ready for International Deployment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="highlight-item">
                         <div class="highlight-icon">
@@ -890,7 +864,7 @@
                         </div>
                     </div>
                     
-                    <a href="https://drive.google.com/file/d/1L14qMwCYJo3lE-mpffbtirF-3BRGZDvt/view?usp=drive_link" target="_blank" class="resume-btn">
+                    <a href="https://drive.google.com/file/d/1jix38K6oXQYmVMs8NK5vSMp-BY3jLXQu/view?usp=sharing" target="_blank" class="resume-btn">
                         <i class="fas fa-download"></i> View & Download Resume (PDF)
                     </a>
                     <p style="margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">Click the button above to access my detailed resume on Google Drive</p>
@@ -984,10 +958,6 @@
                 header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
             }
         });
-
-       
-
-        
 
         // Send Message Form
         const messageForm = document.getElementById('messageForm');
